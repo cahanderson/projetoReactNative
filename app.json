@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "ConsigVenda",
+    "slug": "ConsigVenda",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
