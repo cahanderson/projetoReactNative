@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {NativeBaseProvider,StatusBar} from 'native-base'
+import { theme } from './src/styles/theme';
+import {useFonts, Mina_400Regular,Mina_700Bold} from '@expo-google-fonts/mina'
+import { Loading } from './src/components/Loading';
+import { Routes } from './src/routes';
+import { SignIn } from './src/screens/SignIn';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({Mina_400Regular,Mina_700Bold});
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider theme={theme}>
+      <StatusBar
+        barStyle='light-content'
+        backgroundColor='transparent'
+        translucent
+      />
+      {fontsLoaded ?<Routes />: <Loading />}
+
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
