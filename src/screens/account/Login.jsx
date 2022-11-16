@@ -1,12 +1,12 @@
 import {Box, Icon, Image,Link,Pressable,Stack,Text, VStack} from 'native-base'
-const img = require('../assets/logo-shape.png');
-import { Button } from "../components/Button"; 
-import { Input } from '../components/Input';
+const img = require('../../assets/logo-shape.png');
+import { Button } from "../../components/Button"; 
+import { Input } from '../../components/Input';
 import { Heading } from 'native-base';
 import { useState } from 'react';
 import {User, Eye, EyeSlash } from 'phosphor-react-native'
 
-export function Login(){
+export function Login({navigation}){
     [show, setShow] = useState(false);
     [email, setEmail] = useState(false);
     [senha, setSenha] = useState(false);
@@ -52,10 +52,12 @@ export function Login(){
             </Stack>
             <VStack  w="100%" mt={12} space={4} alignItems="center">
                 <Button
+                    onPress={()=>navigation.navigate('products')}
                     title="Continuar"
                 />
                 <Text bold color='white'>ou</Text>
                 <Button
+                    onPress={()=>navigation.navigate('qrcode')}
                     title="Ler QRCode"
                 />
             </VStack>

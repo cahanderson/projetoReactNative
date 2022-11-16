@@ -1,9 +1,9 @@
 import {Box, Checkbox, Flex, Heading, HStack, Icon, Pressable,Stack,Text, VStack, Button} from 'native-base'
-import { Input } from '../components/Input';
+import { Input } from '../../components/Input';
 import { AntDesign } from '@expo/vector-icons'
 import { useState } from 'react';
 
-export function NewProducts(){
+export function NewProducts({navigation}){
     const [state, setState] = useState({
         codigo:'',
         nome:'',
@@ -14,7 +14,7 @@ export function NewProducts(){
     return(
         <Box flex={1} bgColor='black' p={7}>
             <HStack my={10} space={3}>
-                <Pressable >
+                <Pressable onPress={()=>{navigation.navigate('products')}}>
                     <Icon as={<AntDesign name="arrowleft" />} size={8} color='white'/>
                 </Pressable>
                 <Heading color='white'>Crie sua conta</Heading>

@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export function SignIn(){
-    const navigation = useNavigation()
+    const navigation = useNavigation({navigation})
     return(
         <Box flex={1} bgColor='black' p={7} display='flex' justifyContent='center' alignItems='center'>
             <Image source={img} alt="Alternate Text" size="xl"/>
@@ -16,13 +16,14 @@ export function SignIn(){
                 <VStack  w="100%" mt={24} space={4} alignItems="center">
                     <Button
                         title="Começar agora"
-                        onPress={()=>navigation.navigate('login')}
+                        onPress={()=>navigation.navigate('newAccount')}
                     />
                     <ButtonNative 
                         size="sm" 
                         variant="ghost" 
                         color='white'
                         w='full'
+                        onPress={()=>navigation.navigate('login')}
                     >
                         <Text
                             bold

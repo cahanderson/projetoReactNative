@@ -1,12 +1,12 @@
-import {Box, Icon, Image,Link,Pressable,Stack,Text, VStack} from 'native-base'
-const img = require('../assets/logo-shape.png');
-import { Button } from "../components/Button"; 
-import { Input } from '../components/Input';
+import {Box, Icon, Image,Pressable,Stack,Text, VStack} from 'native-base'
+const img = require('../../assets/logo-shape.png');
+import { Button } from "../../components/Button"; 
+import { Input } from '../../components/Input';
 import { Heading } from 'native-base';
 import { useState } from 'react';
-import {User, Eye, EyeSlash } from 'phosphor-react-native'
+import {Eye, EyeSlash } from 'phosphor-react-native'
 
-export function NewAccount(){
+export function NewAccount({navigation}){
     [show, setShow] = useState(false);
     [email, setEmail] = useState(false);
     [senha, setSenha] = useState(false);
@@ -76,6 +76,7 @@ export function NewAccount(){
             <VStack  w="100%" mt={10} space={4} alignItems="center">
                 <Button
                     title="Aceitar e continuar"
+                    onPress={()=>navigation.navigate('plans')}
                 />
             </VStack>
 
