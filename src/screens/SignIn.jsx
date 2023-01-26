@@ -1,7 +1,7 @@
 import {Box, Image,Text, VStack} from 'native-base'
 import {Button as ButtonNative} from 'native-base'
 const img = require('../assets/logo-shape.png');
-import { Button } from "../components/Button"; 
+import { Button } from "../components/Button";
 import { useNavigation } from '@react-navigation/native';
 
 

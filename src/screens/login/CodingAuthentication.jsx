@@ -8,7 +8,7 @@ export function CodingAuthentication({navigation}){
         <Box flex={1} bgColor='black' p={7}>
             <Box alignItems={'center'} w='100%' h='75%' display='flex'>
                 <HStack mt={7} space={2}>
-                    <Pressable onPress={()=>navigation.navigate('plans')}>
+                    <Pressable onPress={()=>navigation.navigate('Home')}>
                         <Icon as={<AntDesign name="arrowleft" />} size={8} color='white'/>
                     </Pressable>
                     <Heading alignItems='center' color='white'>Dados de pagamento</Heading>

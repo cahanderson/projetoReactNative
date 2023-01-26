@@ -1,10 +1,8 @@
 import {Box, Checkbox, Flex, Heading, HStack, Icon, Pressable,Stack,Text, VStack, Button} from 'native-base'
-import { Input } from '../../components/Input';
 import { AntDesign, Feather } from '@expo/vector-icons'
-import { useState } from 'react';
 
-export function Products({navigation}){
-    let produtos = ["Calcinha", "short", "calça" ]
+export function Route({navigation}){
+    let produtos = ["Caucaia", "Maracanaú", "Morada nova" ]
     return(
         <Box flex={1} bgColor='black' p={7}>
             <HStack my={10} space={2}>
@@ -19,7 +17,7 @@ export function Products({navigation}){
             <Box  alignSelf={'center'} mt={7} alignItems={'center'} w='100%' h='70%' display='flex'>
                 <VStack space={8}>
                     {produtos.map((i)=>(
-                        <Pressable onPress={()=>{navigation.navigate('newProducts')}}>
+                        <Pressable onPress={()=>{navigation.navigate('newRoute')}}>
                             <HStack space={10}>
                                 <Box width='200px'  ><Text fontSize={32} color='white'>{i}</Text></Box>
                                 <Box><Icon as={<AntDesign name="arrowright" />} size={10} color='white'/></Box>

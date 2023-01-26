@@ -1,15 +1,16 @@
-import {Box, Icon, Image,Link,Pressable,Stack,Text, VStack} from 'native-base'
+import {Box, Icon, Image,Pressable,Stack,Text, VStack} from 'native-base'
 const img = require('../../assets/logo-shape.png');
 import { Button } from "../../components/Button"; 
 import { Input } from '../../components/Input';
 import { Heading } from 'native-base';
 import { useState } from 'react';
-import {User, Eye, EyeSlash } from 'phosphor-react-native'
+import {Eye, EyeSlash } from 'phosphor-react-native'
 
 export function Login({navigation}){
     [show, setShow] = useState(false);
     [email, setEmail] = useState(false);
     [senha, setSenha] = useState(false);
+
     return(
         <Box flex={1} bgColor='black' p={7} display='flex' justifyContent='center' alignItems='center'>
             <Box>

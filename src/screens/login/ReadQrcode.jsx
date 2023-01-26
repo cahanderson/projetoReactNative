@@ -13,7 +13,7 @@ export function ReadQrcode({navigation}){
     return(
         <Box flex={1} bgColor='black' p={7} align>
             <Box alignItems={'center'} justifyContent='center' w='100%' h='75%' display='flex'>
-                <Button onPress={navigation.navigate('codingAuthenticate')}>Ir para proxima tela</Button>
+                <Button onPress={()=>navigation.navigate('codingAuthenticate')}>Ir para proxima tela</Button>
             </Box>
             {/* <QRCodeScanner 
                 onRead={(data)=>{setLink(data)}}
