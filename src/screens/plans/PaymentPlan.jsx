@@ -39,14 +39,13 @@ export function PaymentPlan({navigation}){
                         placeholderTextColor="gray.700" 
                         placeholder="Número do cartão" 
                     />
-                    <HStack space={5}>
+                    <HStack >
                         <Input 
                             w={{
-                                base: "55%",
+                                base: "100%",
                                 md: "25%"
                             }}
                             bg='white'
-                            type=''
                             placeholderTextColor="gray.700"
                             placeholder="Data de validade"
                             onChangeText

@@ -19,15 +19,15 @@ const newAccountSchema = yup.object({
   });
 
 
-export function NewAccount({navigation}){
+export function NewAccount({navigation, props}){
     const {control, handleSubmit, formState:{errors}} = useForm({
         resolver:yupResolver(newAccountSchema)
     })
     const[show, setShow] = useState(false);
 
     function handleSignUp(data){
+        // props.usuario = data;
         navigation.navigate('plans')
-        console.log(data)
 
     }
 
