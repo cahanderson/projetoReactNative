@@ -9,6 +9,7 @@ import { Button } from "../../components/Button";
 import { Input } from '../../components/Input';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { Body as BodyComponent } from '../../components/Body';
 
 const newAccountSchema = yup.object({
     name: yup.string().required('Informe o nome'),
@@ -32,8 +33,9 @@ export function NewAccount({navigation, props}){
     }
 
     return(
-        <Box flex={1} bgColor='black' w='full' p={7} >
-                <HStack mt={7} space='12%' mb='6'>
+        <BodyComponent>
+            <Box p={7} >
+                <HStack space='12%' mb='6'>
                     <Pressable onPress={()=>navigation.navigate('home')}>
                         <Icon as={<AntDesign name="arrowleft" />} size={8} color='white'/>
                     </Pressable>
@@ -103,7 +105,7 @@ export function NewAccount({navigation, props}){
                         />
                     </VStack>
                 </KeyboardAvoidingView>
-
             </Box>
+        </BodyComponent>
     )
 }

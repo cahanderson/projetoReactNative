@@ -23,7 +23,7 @@ export function Input({ ErrorMessage=null, isInvalid, ...rest }) {
           borderColor:'red.500'
         }}
         _focus={{
-          bg: "gray.800",
+          bg: "gray.500",
           borderColor: "gray.600"
         }}
         {...rest}

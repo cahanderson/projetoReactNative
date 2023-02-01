@@ -1,5 +1,4 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Login} from '../screens/account/Login'
 import {NewAccount} from '../screens/account/NewAccount'
 import { Products } from '../screens/products/Products';
@@ -55,8 +54,8 @@ export function StackRoutes(){
             />
             <Screen 
             name='team'
-            // component={ProductsTabStack}
-            component={TeamTabStack}
+            component={ProductsTabStack}
+            // component={TeamTabStack}
             options={{ tabBarButton: () => null }}
             />
         </Navigator>
@@ -76,6 +75,7 @@ function CreateAccountTabStack() {
             <CreateAccountStack.Screen name="new" component={NewAccount} />
             <CreateAccountStack.Screen name="plans" component={Plans} />
             <CreateAccountStack.Screen name="paymentPlan" component={PaymentPlan} />
+            <ProductsStack.Screen name="products" component={Products} />
         </CreateAccountStack.Navigator>
     );
 }
@@ -85,6 +85,7 @@ function LoginTabStack() {
             <CreateAccountStack.Screen name="login" component={Login} />
             <CreateAccountStack.Screen name="qrcode" component={ReadQrcode} />
             <CreateAccountStack.Screen name="codingAuthenticate" component={CodingAuthentication} />
+            <ProductsStack.Screen name="products" component={Products} />
         </CreateAccountStack.Navigator>
     );
 }
