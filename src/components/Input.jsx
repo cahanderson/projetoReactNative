@@ -3,14 +3,11 @@ import { FormControl, Input as NativeBaseInput, IInputProps } from 'native-base'
 export function Input({ ErrorMessage=null, isInvalid, ...rest }) {
   const invalid = !!ErrorMessage || isInvalid;
   return (
-    <FormControl isInvalid={invalid} >
+    <FormControl isInvalid={invalid}>
       <NativeBaseInput
+        dis
         h={12}
         px={4}
-        w={{
-          base: "100%",
-          md: "25%"
-      }}
         isInvalid={invalid}
         borderColor="gray.600"
         fontSize="md"

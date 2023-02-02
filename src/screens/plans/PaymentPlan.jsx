@@ -3,13 +3,15 @@ import { Button } from "../../components/Button";
 import { Input } from '../../components/Input';
 import { Heading } from 'native-base';
 import { AntDesign } from '@expo/vector-icons'
-import { useState } from 'react';
 import { Body as BodyComponent } from '../../components/Body';
+import { useState } from 'react';
 
 export function PaymentPlan({navigation}){
-    [show, setShow] = useState(false);
-    [email, setEmail] = useState(false);
-    [senha, setSenha] = useState(false);
+    const [cardHolder, setCardHolder] = useState('');
+    const [cardNumber, setCardNumber] = useState('');
+    const[validDate, setValidDate] = useState('');
+    const[cvv, setCvv] = useState('');
+    const[cpf, setCpf] = useState('');
     return(
         <BodyComponent>
             <Box p={7}>
@@ -20,7 +22,7 @@ export function PaymentPlan({navigation}){
                     <Heading alignItems='center' color='white'>Dados de pagamento</Heading>
                 </HStack>
                 <Box alignItems={'center'} w='100%' h='75%' display='flex'>
-                    <VStack mt={8} space={5} w="100%" alignItems="center">
+                    <VStack mt={8} space={5} w="100%">
                         <Input 
                             w={{
                                 base: "100%",
@@ -29,7 +31,8 @@ export function PaymentPlan({navigation}){
                             bg='white'
                             placeholderTextColor="gray.700"
                             placeholder="Titular do cartão"
-                            onChangeText
+                            value={cardHolder} 
+                            onChangeText={(text) => setCardHolder(text)} 
                         />
 
                         <Input
@@ -40,27 +43,25 @@ export function PaymentPlan({navigation}){
                             bg='white'
                             placeholderTextColor="gray.700" 
                             placeholder="Número do cartão" 
+                            value={cardNumber} 
+                            onChangeText={(text) => setCardNumber(text)}
                         />
-                        <HStack >
-                            <Input 
-                                w={{
-                                    base: "100%",
-                                    md: "25%"
-                                }}
+                        <HStack maxW={'49%'} space='2'>
+                            <Input
+
                                 bg='white'
                                 placeholderTextColor="gray.700"
                                 placeholder="Data de validade"
-                                onChangeText
+                                value={validDate} 
+                                onChangeText={(text) => setValidDate(text)}
                             />
                             <Input 
-                                w={{
-                                    base: "40%",
-                                    md: "25%"
-                                }}
+
                                 bg='white'
                                 placeholderTextColor="gray.700"
                                 placeholder="CVV"
-                                onChangeText
+                                value={cvv} 
+                                onChangeText={(text) => setCvv(text)}
                             />
                         </HStack>
 
@@ -72,6 +73,8 @@ export function PaymentPlan({navigation}){
                             bg='white'
                             placeholderTextColor="gray.700" 
                             placeholder="CPF" 
+                            value={cpf} 
+                            onChangeText={(text) => setCpf(text)}
                         />
                     </VStack>
                     <Box mt={10}>

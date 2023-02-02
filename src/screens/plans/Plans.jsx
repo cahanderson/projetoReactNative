@@ -1,16 +1,13 @@
-import {Box, Center, Heading, HStack, Icon, Text, VStack} from 'native-base'
+import {Box, Heading, HStack, Icon, VStack} from 'native-base'
 import { Pressable } from 'react-native';
 import { Button } from "../../components/Button"; 
 import { useState } from 'react';
-import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
 import {Card} from '../../components/Card'
 import { Body as BodyComponent } from '../../components/Body';
 
 export function Plans({navigation}){
-    const [plan1, setPlan1] = useState(false);
-    const [plan2, setPlan2] = useState(false);
-    const [plan3, setPlan3] = useState(true);
+    const [selectedCard, setSelectedCard] = useState(1);
     return(
         <BodyComponent>
             <Box p={7}>
@@ -22,22 +19,29 @@ export function Plans({navigation}){
                 </HStack>
                 <Box  alignSelf={'center'} mt={7} justifyContent='center' alignItems={'center'} w='100%' h='70%' display='flex'>
                     <VStack space={7} alignItems='center'>
-                        <Pressable onPress={() => console.log("I'm Pressed")}>
+                        <Pressable onPress={() => setSelectedCard(1)}>
                             <Card 
                                 title='Plano solo R$39,90/mês'
-                                p='Gerenciamento de entregas com criação de rotas'
+                                body='Gerenciamento de entregas com criação de rotas'
+                                colors ={selectedCard === 1 ? ['#0089E2','#141440'] : ['#303042','#303042']}
+                                border ={selectedCard === 1 ? '2' : '0'}
                             />
                         </Pressable>
-                        <Pressable onPress={() => console.log("I'm Pressed")}>
+                        <Pressable onPress={() => setSelectedCard(2)}>
                             <Card 
                                 title='Plano solo R$39,90/mês'
-                                p='Gerenciamento de entregas com criação de rotas'
+                                body='Gerenciamento de entregas com criação de rotas'
+                                colors ={selectedCard === 2 ? ['#0089E2','#141440'] : ['#303042','#303042']}
+                                border ={selectedCard === 2 ? '2' : '0'}
+                                
                             />
                         </Pressable>
-                        <Pressable onPress={() => console.log("I'm Pressed")}>
+                        <Pressable onPress={() => setSelectedCard(3)}>
                             <Card 
                                 title='Plano solo R$39,90/mês'
-                                p='Gerenciamento de entregas com criação de rotas'
+                                body='Gerenciamento de entregas com criação de rotas'
+                                colors ={selectedCard === 3 ? ['#0089E2','#141440'] : ['#303042','#303042']}
+                                border ={selectedCard === 3 ? '2' : '0'}
                             />
                         </Pressable>
                     </VStack>

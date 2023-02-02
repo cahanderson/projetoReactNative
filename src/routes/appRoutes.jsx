@@ -38,7 +38,7 @@ export function StackRoutes(){
         >
             <Screen 
             name='home'
-            component={SignIn}
+            component={PaymentPlan}
             // options={{ tabBarButton: () => null }}
             
             />
