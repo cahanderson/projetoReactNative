@@ -1,23 +1,18 @@
-import {Box, Heading, HStack, Icon, VStack} from 'native-base'
+import {Box, VStack} from 'native-base'
 import { Pressable } from 'react-native';
 import { Button } from "../../components/Button"; 
 import { useState } from 'react';
-import { AntDesign } from '@expo/vector-icons';
 import {Card} from '../../components/Card'
 import { Body as BodyComponent } from '../../components/Body';
 
 export function Plans({navigation}){
     const [selectedCard, setSelectedCard] = useState(1);
     return(
-        <BodyComponent>
+        <BodyComponent
+            title='Escolha seu plano'
+        >
             <Box p={7}>
-                <HStack mt={7} space='12%' mb='6'>
-                    <Pressable onPress={()=>navigation.navigate('new')}>
-                        <Icon as={<AntDesign name="arrowleft" />} size={8} color='white'/>
-                    </Pressable>
-                    <Heading alignItems='center' color='white'>Escolha seu plano</Heading>
-                </HStack>
-                <Box  alignSelf={'center'} mt={7} justifyContent='center' alignItems={'center'} w='100%' h='70%' display='flex'>
+                <Box alignSelf={'center'} mt={10} justifyContent='center' alignItems={'center'} w='100%' h='70%' display='flex'>
                     <VStack space={7} alignItems='center'>
                         <Pressable onPress={() => setSelectedCard(1)}>
                             <Card 
@@ -46,7 +41,7 @@ export function Plans({navigation}){
                         </Pressable>
                     </VStack>
                 </Box>
-                <VStack  w="100%" mt={10} space={4} alignItems="center">
+                <VStack  w="100%" mt={20} space={4} alignItems="center">
                     <Button
                         title="Aceitar e continuar"
                         onPress={()=>navigation.navigate('paymentPlan')}

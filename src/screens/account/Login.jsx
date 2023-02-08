@@ -14,11 +14,16 @@ export function Login({navigation}){
 
     return(
         <BodyComponent>
-            <Box p={7} alignItems='center'>
+            <Box 
+                p={7} 
+                top='5%'
+                alignItems='center'
+                justifyContent='center'
+            >
                 <Box>
                     <Image source={img} alt="Alternate Text" size="xl"/>
                 </Box>
-                <Box my={10} display='flex' alignContent='flex-start'>
+                 <Box my={10} display='flex' alignContent='flex-start'>
                     <Heading color='white'>Entrar</Heading>
                 </Box>
                 <Stack space={5} w="100%" alignItems="center">
@@ -50,7 +55,7 @@ export function Login({navigation}){
                     />
                     <Text color='white'>Esqueceu a senha?</Text>
                 </Stack>
-                <VStack  w="100%" mt={12} space={4} alignItems="center">
+                 <VStack  w="100%" mt={12} space={4} alignItems="center">
                     <Button
                         onPress={()=>navigation.navigate('products')}
                         title="Continuar"

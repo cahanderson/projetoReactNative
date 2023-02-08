@@ -1,10 +1,9 @@
 const img = require('../../assets/logo-shape.png');
 import { useState } from 'react';
 import { Pressable, KeyboardAvoidingView } from 'react-native';
-import {Heading, HStack, Box, Icon, Image,Stack,Text, VStack, ScrollView} from 'native-base'
+import {Heading, Box, Icon, Image,Stack,Text, VStack} from 'native-base'
 import {useForm, Controller} from 'react-hook-form'
 import {Eye, EyeSlash } from 'phosphor-react-native'
-import { AntDesign } from '@expo/vector-icons'
 import { Button } from "../../components/Button"; 
 import { Input } from '../../components/Input';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -29,17 +28,18 @@ export function NewAccount({navigation, props}){
     function handleSignUp(data){
         // props.usuario = data;
         navigation.navigate('plans')
+        console.log(data)
 
     }
 
     return(
         <BodyComponent>
-            <Box p={7} >
-                <HStack space='12%' mb='6'>
+             <Box p={7} >
+                {/* <HStack space='12%' mb='6'>
                     <Pressable onPress={()=>navigation.navigate('home')}>
-                        <Icon as={<AntDesign name="arrowleft" />} size={8} color='white'/>
+                        <Icon as={<AntDesign name="arrowleft" />} size={8}/>
                     </Pressable>
-                </HStack>
+                </HStack> */}
                 {/* Componentizar Sidebar com botão de voltar e Title */}
 
                 <KeyboardAvoidingView
@@ -52,7 +52,7 @@ export function NewAccount({navigation, props}){
                         <Image source={img} alt="Alternate Text" size="xl"/>
                     </Box>
                     <Box my={10} display='flex' alignContent='flex-start'>
-                        <Heading color='white'>Crie sua conta</Heading>
+                        <Heading>Crie sua conta</Heading>
                     </Box>
 
                     <Stack space={5} w="100%" alignItems="center">
@@ -90,10 +90,10 @@ export function NewAccount({navigation, props}){
                             )}
                         />
 
-                        <Text fontSize={'xs'} color='white'>A senha deve ter: min. 8 carácteres, 1 letra maiúscula, 1 minúscula e 1 número.</Text>
+                        <Text fontSize={'xs'} >A senha deve ter: min. 8 carácteres, 1 letra maiúscula, 1 minúscula e 1 número.</Text>
                     </Stack>
                     <Box mt={10}>
-                        <Text color='white'>
+                        <Text >
                             Ao decidir "Aceitar e Continuar", você estará concordando com nosso Termo de Uso e declare ter lido nosso Termo de Privacidade.
                         </Text>
                     </Box>

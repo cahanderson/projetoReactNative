@@ -9,12 +9,6 @@ export function CodingAuthentication({navigation}){
         <BodyComponent>
             <Box p={7}>
                 <Box top='2'>
-                    <HStack space='5%' mb='6'>
-                        <Pressable onPress={()=>navigation.navigate('home')}>
-                            <Icon as={<AntDesign name="arrowleft" />} size={8} color='white'/>
-                        </Pressable>
-                        <Heading alignItems='center' color='white'>Dados de pagamento</Heading>
-                    </HStack>
                     <VStack justifyContent='center' alignContent='center'>
                         <Center>
                             <Text>Aguarde ser dispositivo ser liberado.</Text>

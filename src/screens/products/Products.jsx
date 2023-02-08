@@ -4,23 +4,20 @@ import { Body as BodyComponent } from '../../components/Body';
 
 
 export function Products({navigation}){
-    let produtos = ["Calcinha", "short", "calça" ]
+    const data = [
+        { id: '1', name: 'Camisa Branca' },
+        { id: '2', name: 'Calça Jeans' },
+        { id: '3', name: 'Tênis Preto' },
+        { id: '4', name: 'Jaqueta de Couro' },
+      ];
     return(
-        <BodyComponent>
-
+        <BodyComponent
+            title='Produtos'
+        >
             <Box p={7}>
-                <HStack my={10} space={2}>
-                    <Pressable >
-                        <Icon as={<AntDesign name="arrowleft" />} size={8} color='white'/>
-                    </Pressable>
-                    <Heading color='white'>Produto</Heading>
-                    <Pressable >
-                        <Icon as={<Feather name="search" />} mt={1} marginLeft={48} size={6} color='white'/>
-                    </Pressable>
-                </HStack>
                 <Box  alignSelf={'center'} mt={7} alignItems={'center'} w='100%' h='70%' display='flex'>
                     <VStack space={8}>
-                        {produtos.map((i)=>(
+                        {data.map((i)=>(
                             <Pressable onPress={()=>{navigation.navigate('newProducts')}}>
                                 <HStack space={10}>
                                     <Box width='200px'  ><Text fontSize={32} color='white'>{i}</Text></Box>

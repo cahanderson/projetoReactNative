@@ -21,7 +21,6 @@ export function StackRoutes(){
         <Navigator
             screenOptions={{
                 headerShown:false,
-
                 tabBarLabelPosition: 'beside-icon',
                 tabBarActiveTintColor: 'blue.700',
                 tabBarInactiveTintColor: 'gray.300',
@@ -37,26 +36,20 @@ export function StackRoutes(){
             }}
         >
             <Screen 
-            name='home'
-            component={PaymentPlan}
-            // options={{ tabBarButton: () => null }}
-            
+                name='home'
+                component={SignIn}
             />
             <Screen 
-            name='login'
-            component={LoginTabStack}
-            options={{ tabBarButton: () => null }}
+                name='login'
+                component={LoginTabStack}
             />
             <Screen 
-            name='newAccount'
-            component={CreateAccountTabStack}
-            options={{ tabBarButton: () => null }}
+                name='newAccount'
+                component={CreateAccountTabStack}
             />
             <Screen 
-            name='team'
-            component={ProductsTabStack}
-            // component={TeamTabStack}
-            options={{ tabBarButton: () => null }}
+                name='team'
+                component={ProductsTabStack}
             />
         </Navigator>
     )
