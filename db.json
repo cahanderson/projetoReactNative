@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Men's Clothing",
+      "item": "Mocado T-Shirt",
+      "price": 25.99
+    },
+    {
+      "id": 2,
+      "category": "Men's Clothing",
+      "item": "Mocado Hoodie",
+      "price": 49.99
+    },
+    {
+      "id": 3,
+      "category": "Men's Clothing",
+      "item": "Mocado Denim Jacket",
+      "price": 89.99
+    },
+    {
+      "id": 4,
+      "category": "Men's Clothing",
+      "item": "Mocado Button-Up Shirt",
+      "price": 59.99
+    },
+    {
+      "id": 5,
+      "category": "Men's Clothing",
+      "item": "Mocado Sweatpants",
+      "price": 39.99
+    }
+  ]
+}

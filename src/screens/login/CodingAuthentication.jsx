@@ -1,9 +1,14 @@
-import {Box, Center, Heading, HStack, Icon, Text, VStack} from 'native-base'
-import { AntDesign, Feather } from '@expo/vector-icons'
-import { Pressable } from 'react-native'
+import {Box, Center, Text, VStack} from 'native-base'
 import { Body as BodyComponent } from '../../components/Body'
 
 export function CodingAuthentication({navigation}){
+    function changeView(){
+        navigation.navigate('route')
+    }
+
+    setTimeout(() => {
+        changeView()
+      }, 2000);
 
     return(
         <BodyComponent>
