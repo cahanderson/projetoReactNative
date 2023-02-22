@@ -29,6 +29,12 @@
       "category": "Men's Clothing",
       "item": "Mocado Sweatpants",
       "price": 39.99
+    },
+    {
+      "category": "Clothing",
+      "item": "Mocado Hoodie",
+      "price": 49.99,
+      "id": 6
     }
   ]
 }

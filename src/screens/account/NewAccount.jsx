@@ -15,7 +15,6 @@ const newAccountSchema = yup.object({
     email: yup.string().required('Informe o email').email('E-mail inválido'),
     phone: yup.number(),
     password:yup.string().required('Informe sua senha').min(8,'A senha deve conter no mínimo 8 dígitos')
-    
   });
 
 

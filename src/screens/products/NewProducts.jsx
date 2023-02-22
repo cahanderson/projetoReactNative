@@ -3,7 +3,8 @@ import { Input } from '../../components/Input';
 import { AntDesign } from '@expo/vector-icons'
 import { useState } from 'react';
 
-export function NewProducts({navigation}){
+export function NewProducts({navigation, route}){
+    const{productId, productName} = route.params;
     const [state, setState] = useState({
         codigo:'',
         nome:'',

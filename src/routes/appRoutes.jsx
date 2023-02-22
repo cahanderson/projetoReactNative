@@ -12,7 +12,7 @@ import { Route } from '../screens/route';
 import { NewRoute } from '../screens/route/form';
 import { Invitation } from '../screens/team/qrCodeInvite';
 import { Team } from '../screens/team';
-import { CheckingConection } from '../screens/checkingConection';
+// import { CheckingConection } from '../screens/checkingConection';
 
 const ProductsStack = createNativeStackNavigator();
 const CreateAccountStack = createNativeStackNavigator();
@@ -38,7 +38,7 @@ export function StackRoutes(){
         >
             <Screen 
                 name='home'
-                component={Route}
+                component={ProductsTabStack}
             />
             <Screen 
                 name='login'
@@ -49,7 +49,7 @@ export function StackRoutes(){
                 component={CreateAccountTabStack}
             />
             <Screen 
-                name='team'
+                name='product'
                 component={ProductsTabStack}
             />
         </Navigator>
@@ -57,11 +57,11 @@ export function StackRoutes(){
 }
 function ProductsTabStack() {
     return (
-        <ProductsStack.Navigator screenOptions={{headerShown:false}}>
+        <ProductsStack.Navigator screenOptions={{headerShown:false}} initialRouteName="products">
             <ProductsStack.Screen name="products" component={Products} />
             <ProductsStack.Screen name="newProducts" component={NewProducts} />
-            <CreateAccountStack.Screen name="route" component={Route} />
-            <CreateAccountStack.Screen name="newRoute" component={NewRoute} />
+            <ProductsStack.Screen name="route" component={Route} />
+            <ProductsStack.Screen name="newRoute" component={NewRoute} />
         </ProductsStack.Navigator>
     );
 }
@@ -81,7 +81,6 @@ function LoginTabStack() {
             <CreateAccountStack.Screen name="login" component={Login} />
             <CreateAccountStack.Screen name="qrcode" component={ReadQrcode} />
             <CreateAccountStack.Screen name="codingAuthenticate" component={CodingAuthentication} />
-            <CreateAccountStack.Screen name="route" component={Route} />
         </CreateAccountStack.Navigator>
     );
 }

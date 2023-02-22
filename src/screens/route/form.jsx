@@ -3,7 +3,9 @@ import { Input } from '../../components/Input';
 import { AntDesign } from '@expo/vector-icons'
 import { useState } from 'react';
 
-export function NewRoute({navigation}){
+export function NewRoute({navigation,route}){
+    const{productId, productName} = route.params;y
+    console.log(productId, productName)
     const uf = ['AC','AL','AM','BA','CE','DF','ES','GO','MA','MT','RS','MS','MG',]
     const [service, setService] = useState("");
     const [state, setState] = useState({

@@ -3,7 +3,7 @@ import { Body as BodyComponent } from '../../components/Body'
 
 export function CodingAuthentication({navigation}){
     function changeView(){
-        navigation.navigate('route')
+        navigation.navigate('product')
     }
 
     setTimeout(() => {
